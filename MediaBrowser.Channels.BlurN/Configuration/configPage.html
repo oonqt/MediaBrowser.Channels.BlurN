@@ -251,10 +251,11 @@
                     config.Age = $('#txtAge', form).val();
                     config.MinimumIMDBRating = $('#txtMinimumIMDBRating', form).val();
                     config.MinimumIMDBVotes = $('#txtMinimumIMDBVotes', form).val();
-                    config.UseInterfaceLanguage = $('#chkUseInterfaceLanguage', form).checked();
-                    config.AddItemsAlreadyInLibrary = $('#chkAddItemsAlreadyInLibrary', form).checked();
-                    config.HidePlayedMovies = $('#chkHidePlayedMovies', form).checked();
-                    config.EnableDebugLogging = $('#chkDebugLogging', form).checked();
+
+                    config.UseInterfaceLanguage = form.querySelector("#chkUseInterfaceLanguage").checked;
+                    config.AddItemsAlreadyInLibrary = form.querySelector("#chkAddItemsAlreadyInLibrary").checked;
+                    config.HidePlayedMovies = form.querySelector("#chkHidePlayedMovies").checked;
+                    config.EnableDebugLogging = form.querySelector("#chkDebugLogging").checked;
 
                     config.Action = form.querySelector("#chkAction").checked;
                     config.Adventure = form.querySelector("#chkAdventure").checked;
