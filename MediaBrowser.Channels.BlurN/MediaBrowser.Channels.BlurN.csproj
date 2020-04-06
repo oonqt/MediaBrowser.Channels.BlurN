@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;</TargetFrameworks>
-    <AssemblyVersion>2.0.2.8</AssemblyVersion>
-    <FileVersion>2.0.2.7</FileVersion>
+    <AssemblyVersion>2.0.2.9</AssemblyVersion>
+    <FileVersion>2.0.2.9</FileVersion>
     <Description />
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;$(TargetPath)&quot; &quot;E:\emby.windows\plugins\&quot; /y&#xD;&#xA;xcopy &quot;$(TargetPath)&quot; &quot;E:\embyserver-win-x64-3.3.0.0\programdata\plugins\&quot; /y" />
+    <Exec Command="xcopy &quot;$(TargetPath)&quot; &quot;%AppData%\Emby-Server\programdata\plugins\&quot; /y" />
   </Target>
-
 </Project>
