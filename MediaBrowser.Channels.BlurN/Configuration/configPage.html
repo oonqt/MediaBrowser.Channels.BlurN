@@ -154,6 +154,7 @@
                     </div>
                     <p><b>Note:</b> This plugin is anonymously tracking its usage purely for statistical purposes.</p>
                     <p>Like my plugin? Buy me a drink!</p>
+                    <p>Plugin patched by <a href="https://emby.media/community/index.php?/user/466322-rechigo/">rechigo</a>> for recent Emby Server versions</p>
                     <p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RHMS9UKYKSMM8" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" /></a></p>
                 </form>
             </div>
@@ -190,7 +191,7 @@
                 + pad(d.getUTCDate()));
             }
             var BlurNConfigurationPage = {
-                pluginUniqueId: "08D13692-D214-47DF-B9BD-2868870C5961"
+                pluginUniqueId: "9ae34738-1b82-4e68-85a8-6a2e50df05f9"
             };
             $('.BlurNConfigurationPage').on('pageinit', function (event) {
                 var page = this;
@@ -208,37 +209,39 @@
                 var page = this;
                 ApiClient.getPluginConfiguration(BlurNConfigurationPage.pluginUniqueId).then(function (config) {
                     showLastPublishedDate(page, config.LastPublishDate);
-                    getHTML('https://raw.githubusercontent.com/MarkCiliaVincenti/MediaBrowser.Channels.BlurN/master/MediaBrowser.Channels.BlurN/latestversion.txt', function (response) {
+                    getHTML('https://github.com/oonqt/MediaBrowser.Channels.BlurN/blob/master/MediaBrowser.Channels.BlurN/latestversion.txt', function (response) {
                         $('#BlurNTitle', page).html('BlurN ' + config.BlurNVersion + ' (latest version <a href="index.html?start=wizard#!/addplugin.html?name=BlurN&guid=08D13692-D214-47DF-B9BD-2868870C5961">' + response + '</a>)');
                     });
                     $('#txtAge', page).val(config.Age || "");
                     $('#txtMinimumIMDBRating', page).val(config.MinimumIMDBRating || "");
                     $('#txtMinimumIMDBVotes', page).val(config.MinimumIMDBVotes || "");
-                    $('#chkUseInterfaceLanguage', page).checked(config.UseInterfaceLanguage || false).checkboxradio("refresh");
-                    $('#chkAddItemsAlreadyInLibrary', page).checked(config.AddItemsAlreadyInLibrary || false).checkboxradio("refresh");
-                    $('#chkHidePlayedMovies', page).checked(config.HidePlayedMovies || false).checkboxradio("refresh");
-                    $('#chkDebugLogging', page).checked(config.EnableDebugLogging || false).checkboxradio("refresh");
-                    $('#chkAction', page).checked(config.Action || false).checkboxradio("refresh");
-                    $('#chkAdventure', page).checked(config.Adventure || false).checkboxradio("refresh");
-                    $('#chkAnimation', page).checked(config.Animation || false).checkboxradio("refresh");
-                    $('#chkBiography', page).checked(config.Biography || false).checkboxradio("refresh");
-                    $('#chkComedy', page).checked(config.Comedy || false).checkboxradio("refresh");
-                    $('#chkCrime', page).checked(config.Crime || false).checkboxradio("refresh");
-                    $('#chkDrama', page).checked(config.Drama || false).checkboxradio("refresh");
-                    $('#chkFamily', page).checked(config.Family || false).checkboxradio("refresh");
-                    $('#chkFantasy', page).checked(config.Fantasy || false).checkboxradio("refresh");
-                    $('#chkFilmNoir', page).checked(config.FilmNoir || false).checkboxradio("refresh");
-                    $('#chkHistory', page).checked(config.History || false).checkboxradio("refresh");
-                    $('#chkHorror', page).checked(config.Horror || false).checkboxradio("refresh");
-                    $('#chkMusic', page).checked(config.Music || false).checkboxradio("refresh");
-                    $('#chkMusical', page).checked(config.Musical || false).checkboxradio("refresh");
-                    $('#chkMystery', page).checked(config.Mystery || false).checkboxradio("refresh");
-                    $('#chkRomance', page).checked(config.Romance || false).checkboxradio("refresh");
-                    $('#chkSciFi', page).checked(config.SciFi || false).checkboxradio("refresh");
-                    $('#chkSport', page).checked(config.Sport || false).checkboxradio("refresh");
-                    $('#chkThriller', page).checked(config.Thriller || false).checkboxradio("refresh");
-                    $('#chkWar', page).checked(config.War || false).checkboxradio("refresh");
-                    $('#chkWestern', page).checked(config.Western || false).checkboxradio("refresh");
+                    page.querySelector("#chkUseInterfaceLanguage").checked = config.UseInterfaceLanguage || false;
+                    page.querySelector("#chkAddItemsAlreadyInLibrary").checked = config.AddItemsAlreadyInLibrary || false;
+                    page.querySelector("#chkHidePlayedMovies").checked = config.HidePlayedMovies || false;
+                    page.querySelector("#chkDebugLogging").checked = config.EnableDebugLogging || false;
+                    page.querySelector("#chkAction").checked = config.Action || false;
+
+                    page.querySelector("#chkAdventure").checked = config.Adventure || false;
+                    page.querySelector("#chkAnimation").checked = config.Animation || false;
+                    page.querySelector("#chkBiography").checked = config.Biography || false;
+                    page.querySelector("#chkComedy").checked = config.Comedy || false;
+                    page.querySelector("#chkCrime").checked = config.Crime || false;
+                    page.querySelector("#chkDrama").checked = config.Drama || false;
+                    page.querySelector("#chkFamily").checked = config.Family || false;
+                    page.querySelector("#chkFantasy").checked = config.Fantasy || false;
+                    page.querySelector("#chkFilmNoir").checked = config.FilmNoir || false;
+                    page.querySelector("#chkHistory").checked = config.History || false;
+                    page.querySelector("#chkHorror").checked = config.Horror || false;
+                    page.querySelector("#chkMusic").checked = config.Music || false;
+                    page.querySelector("#chkMusical").checked = config.Musical || false;
+                    page.querySelector("#chkMystery").checked = config.Mystery || false;
+                    page.querySelector("#chkRomance").checked = config.Romance || false;
+                    page.querySelector("#chkSciFi").checked = config.SciFi || false;
+                    page.querySelector("#chkSport").checked = config.Sport || false;
+                    page.querySelector("#chkThriller").checked = config.Thriller || false;
+                    page.querySelector("#chkWar").checked = config.War || false;
+                    page.querySelector("#chkWestern").checked = config.Western || false;
+
                     Dashboard.hideLoadingMsg();
                 });
             });
