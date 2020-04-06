@@ -18,7 +18,7 @@ namespace MediaBrowser.Channels.BlurN
     public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages, IHasThumbImage
     {
         #region Class Members
-        private Guid _id = new Guid("08D13692-D214-47DF-B9BD-2868870C5961");
+        private Guid _id = new Guid("9ae34738-1b82-4e68-85a8-6a2e50df05f9");
         private IApplicationPaths _appPaths;
         private static ILogger Logger;
         public static INotificationManager NotificationManager;
