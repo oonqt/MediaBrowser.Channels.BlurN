@@ -220,7 +220,6 @@
                     page.querySelector("#chkHidePlayedMovies").checked = config.HidePlayedMovies || false;
                     page.querySelector("#chkDebugLogging").checked = config.EnableDebugLogging || false;
                     page.querySelector("#chkAction").checked = config.Action || false;
-
                     page.querySelector("#chkAdventure").checked = config.Adventure || false;
                     page.querySelector("#chkAnimation").checked = config.Animation || false;
                     page.querySelector("#chkBiography").checked = config.Biography || false;
@@ -256,27 +255,29 @@
                     config.AddItemsAlreadyInLibrary = $('#chkAddItemsAlreadyInLibrary', form).checked();
                     config.HidePlayedMovies = $('#chkHidePlayedMovies', form).checked();
                     config.EnableDebugLogging = $('#chkDebugLogging', form).checked();
-                    config.Action = $('#chkAction', form).checked();
-                    config.Adventure = $('#chkAdventure', form).checked();
-                    config.Animation = $('#chkAnimation', form).checked();
-                    config.Biography = $('#chkBiography', form).checked();
-                    config.Comedy = $('#chkComedy', form).checked();
-                    config.Crime = $('#chkCrime', form).checked();
-                    config.Drama = $('#chkDrama', form).checked();
-                    config.Family = $('#chkFamily', form).checked();
-                    config.Fantasy = $('#chkFantasy', form).checked();
-                    config.FilmNoir = $('#chkFilmNoir', form).checked();
-                    config.History = $('#chkHistory', form).checked();
-                    config.Horror = $('#chkHorror', form).checked();
-                    config.Music = $('#chkMusic', form).checked();
-                    config.Musical = $('#chkMusical', form).checked();
-                    config.Mystery = $('#chkMystery', form).checked();
-                    config.Romance = $('#chkRomance', form).checked();
-                    config.SciFi = $('#chkSciFi', form).checked();
-                    config.Sport = $('#chkSport', form).checked();
-                    config.Thriller = $('#chkThriller', form).checked();
-                    config.War = $('#chkWar', form).checked();
-                    config.Western = $('#chkWestern', form).checked();
+
+                    config.Action = form.querySelector("#chkAction").checked;
+                    config.Adventure = form.querySelector("#chkAdventure").checked;
+                    config.Animation = form.querySelector("#chkAnimation").checked;
+                    config.Biography = form.querySelector("#chkBiography").checked;
+                    config.Comedy = form.querySelector("#chkComedy").checked;
+                    config.Crime = form.querySelector("#chkCrime").checked;
+                    config.Drama = form.querySelector("#chkDrama").checked;
+                    config.Family = form.querySelector("#chkFamily").checked;
+                    config.Fantasy = form.querySelector("#chkFantasy").checked;
+                    config.FilmNoir = form.querySelector("#chkFilmNoir").checked;
+                    config.History = form.querySelector("#chkHistory").checked;
+                    config.Horror = form.querySelector("#chkHorror").checked;
+                    config.Music = form.querySelector("#chkMusic").checked;
+                    config.Musical = form.querySelector("#chkMusical").checked;
+                    config.Mystery = form.querySelector("#chkMystery").checked;
+                    config.Romance = form.querySelector("#chkRomance").checked;
+                    config.SciFi = form.querySelector("#chkSciFi").checked;
+                    config.Sport = form.querySelector("#chkSport").checked;
+                    config.Thriller = form.querySelector("#chkThriller").checked;
+                    config.Western = form.querySelector("#chkWar").checked;
+                    config.Action = form.querySelector("#chkWestern").checked;
+
                     config.DataVersion = "0";
                     ApiClient.updatePluginConfiguration(BlurNConfigurationPage.pluginUniqueId, config).then(Dashboard.processPluginConfigurationUpdateResult);
                 });
